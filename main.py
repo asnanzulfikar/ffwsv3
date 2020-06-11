@@ -6,7 +6,7 @@ import re
 import base64
 from hashlib import md5
 from threading import Thread
-import cPickle
+import pickle
 from web import form
 
 try:
@@ -18,11 +18,10 @@ except ImportError:
 from sqlobject.main import SQLObjectNotFound
 from sqlobject import AND
 
-from models import Agent, NewsTicker, Authuser, conn, HIDROLOGI
+from models import Agent, PeriodikJam, Authuser, conn, HIDROLOGI, WILAYAH
 
 from curahhujan import app_ch
 from tma import app_tma
-from bendungan import app_bendungan
 from about import app_about
 from kekeringan import app_kekeringan
 from kualitas_air import app_kualitas_air
@@ -45,7 +44,6 @@ urls = (
     '/incoming', 'Incoming',
     '/curahhujan', app_ch,
     '/tma', app_tma,
-    '/bendungan', app_bendungan,
     '/api', app_api,
     '/adm', app_adm,
     '/sensor', app_sensor,
@@ -103,9 +101,7 @@ class Incoming:
             username, password = base64.decodestring(auth).split(':')
             password = md5(password).hexdigest()
             if (username, password) in allowed:
-                if web.input()['what'] == 'news_ticker':
-                    return [n.id for n in NewsTicker.select()]
-                elif web.input()['what'] == 'pos':
+                if web.input()['what'] == 'pos':
                     poses = []
                     for a in Agent.select():
                         try:
@@ -169,11 +165,60 @@ class Incoming:
         </html>
         """
 
+    def put_to_periodik_jam(self, agent, data):
+        '''Simpan ke PeriodikJam
+        @params: data (dict)
+        <PeriodikJam agent=Tritis, sampling=datetime.datetime(2020,1,31,7),
+        rain=0>
+        <PeriodikJam agent=Tritis, sampling=datetime.datetime(2020,1,31,8),
+        rain=0>
+        <PeriodikJam agent=Tritis, sampling=datetime.datetime(2020,1,31,9),
+        rain=0>
+
+        data: {..., 'Rain': 'NULL', 'SamplingTime': datetime.timedelta(0,
+        48000), 'SamplingDate': datetime.date(2020, 1, 31), ...}
+        '''
+        from models import PeriodikJam
+        secs = int(data.get('SamplingDate').strftime('%s')) + \
+            data.get('SamplingTime').seconds / 3600
+        sampling = datetime.datetime.fromtimestamp(secs)
+
+        rst = PeriodikJam.select(AND(PeriodikJam.q.agent==agent,
+                                          PeriodikJam.q.sampling==sampling))
+        if agent.AgentType in (0, 1):
+            # untuk data curahhujan
+            try:
+                rain = data.get('Rain') * agent.TippingFactor
+            except ValueError:
+                rain = 0
+            if rst.count():
+                rst[0].rain += rain
+            elif rain > 0:
+                pj = PeriodikJam(**dict(agent=agent, sampling=sampling,
+                                   rain=rain))
+        elif agent.AgentType == 2.0:
+            # WLevel
+            if rst.count():
+                try:
+                    wlevel = int(data.get('WLevel')) > rst[0].wlevel and \
+                        int(data.get('WLevel')) or rst[0].wlevel
+                    rst[0].wlevel = wlevel
+                except ValueError:
+                    pass
+            else:
+                try:
+                    wlevel = int(data.get('WLevel'))
+                    pj = PeriodikJam(**dict(agent=agent, sampling=sampling,
+                                            wlevel=wlevel))
+                except ValueError:
+                    pass
+
+
     def import_input(self):
-        print 'import_input running'
+        print('import_input running')
         to_load = {}
         with open('/tmp/svrdata.pkl', 'rb') as f:
-            to_load = cPickle.load(f)
+            to_load = pickle.load(f)
         for d in to_load.get('pos_to_put', []):
             try:
                 agent = Agent.select(Agent.q.AgentName == d['name'])[0]
@@ -187,7 +232,7 @@ class Incoming:
                         Agent.q.AgentName == d['name'])[0]
             # Periksa apakah table pemuat Logs untuk
             # pos ini telah tersedia
-            print 'incoming:', agent.table_name
+            print('incoming:', agent.table_name)
             try:
                 rs = conn.queryAll("SELECT SamplingDate FROM %s \
                                    LIMIT 0, 1" % (agent.table_name))
@@ -283,14 +328,14 @@ class Login:
         if not auth(i.username, i.password):
             session.autherror = '1'
             return web.seeother('/login?next=%s' % web.ctx.env.get('PATH_INFO'))
-        dest = 'adm_ch_tma_bendungan_kualitasair'.split('_')
+        dest = 'adm_ch_tma_klimatologi_kualitasair'.split('_')
+        if session.is_admin > len(dest):
+            return "403"
 
         redirect = '/' + dest[0]
         if session.table_name:
             redirect += '/' + dest[session.is_admin] + '/' + session.table_name
-        else:
-            redirect += '/' + dest[session.is_admin]
-        print 'redirect:', redirect
+        print('redirect:', redirect)
 
 
         try:
@@ -354,8 +399,42 @@ class get_tmb:
 
 class index:
     def GET(self):
-        return render.index()
-        # return map_render.map_tma(news)
+        id_tma = (204, 2, 12, 47, 5, 54, 240, 45)
+        today = datetime.date.today()
+        lalu = today - datetime.timedelta(days=(today.day + 59))
+        lalu = lalu.replace(day=1)
+        h = lalu
+        haris = {}
+        while (h < today):
+            h += datetime.timedelta(days=1)
+            haris[int(h.strftime("%s"))*1000] = 0
+        hujan = PeriodikJam.select(AND(PeriodikJam.q.rain > 0,
+                                       PeriodikJam.q.sampling > lalu))
+        hujan_terjadi = {}
+        for h in hujan:
+            try:
+                haris[int(h.sampling.date().strftime('%s'))*1000] += h.rain
+            except KeyError:
+                pass
+            '''
+            pos_id = h.agent.AgentId
+
+            if pos_id not in hh:
+                hh[pos_id] = h.rain
+            else:
+                hh[pos_id] += h.rain
+            '''
+        pos_tma = []
+        for i in id_tma:
+            try:
+                a = Agent.get(i)
+                pos_tma.append((a, a.get_tma()))
+            except:
+                pass
+
+        # return render.index({'hujan': hujan, 'series': haris, 'pos_tma':
+        #                      pos_tma, 'wilayah': WILAYAH})
+        return render_plain.ffws_tampilan_baru.index({'hujan': hujan, 'series': haris, 'pos_tma': pos_tma, 'wilayah': WILAYAH})
 
 
 def is_test():
