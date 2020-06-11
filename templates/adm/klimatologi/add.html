@@ -1,0 +1,102 @@
+$def with(ctx)
+$ tg = ctx.get('tg')
+$code:
+    haris = [h.title() for h in "sen_sel_rab_kam_jum_sab_min".split('_')]
+    hars = [h.title() for h in "senin_selasa_rabu_kamis_jum'at_sabtu_minggu".split('_')]
+    bulan = [b.title() for b in "jan_feb_mar_apr_mei_jun_jul_ags_sep_okt_nop_des".split('_')]
+$var extra_header:
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    <style type="text/css">
+       .datepicker {z-index: 1002;}
+    </style>
+$var js_foot:
+    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.floatThead.min.js"></script>
+    <script type="text/javascript">
+        \$(document).ready(function () {
+            var \$table = \$('.table');
+            \$table.floatThead({
+                top: 60,
+                responsiveContainer: function (\$table) {
+                    return \$table.closest('.table-responsive');
+                }
+            });
+            var hars = [$:{','.join(["'" + h + "'" for h in haris])}]
+            var buls = [$:{','.join(["'" + h + "'" for h in bulan])}]
+            \$('.datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+                endDate:'-1d',
+                autoclose: true
+             });
+            \$('.editable').editable({
+                url: '/adm/ch/update'
+            });
+            \$('.gotomonth').datepicker({
+                format: 'yyyy-mm-dd',
+                startView: "months",
+                minViewMode: "months",
+                autoclose: true
+             });
+          \$('.gotomonth').on('changeDate', function() {
+              window.location = '/adm/ch/test?sampling=' + \$(this).datepicker('getFormattedDate');
+          });
+          \$('.datepicker').on('changeDate', function() {
+              var dated = \$(this).datepicker('getDate');
+              var wd = dated.getDay() - 1;
+              if (wd === -1) { wd = 6; }
+              \$(this).html(hars[wd] + ", " +dated.getDate() +' '+ buls[dated.getMonth()] +' '+ dated.getFullYear());
+              var form = \$(this).parents('form:first');
+              \$('input[name=waktu]', form).val(dated.getFullYear()+'/'+(dated.getMonth()+1) +'/'+dated.getDate());
+              });
+        });
+    </script>
+
+<h1>Input Data Klimatologi Manual</h1>
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#forminput" aria-expanded="false" aria-controls="collapseExample">
+    Form Input Data <span class="glyphicon glyphicon-triangle-right"></span>
+  </button>
+</p>
+<hr style="border: 1px solid black;">
+<div class="collapse" id="forminput">
+	<form>
+		<div class="form-group">
+			<label for="">Tanggal</label>
+			<input type="hidden" name="csrf_token" value="${csrf_token()}">
+			<input type="hidden" name="waktu" value="${tg.strftime('%Y/%m/%d')}">
+			<p class="datepicker">${haris[tg.weekday()]}, ${tg.strftime('%d %b %Y')}</p>
+		</div>
+		<div class="form-group">
+		<label>Curah Hujan (mm)</label>
+		<input type="number" step="0.1" class="form-control" placeholder="0.5" required>
+		</div>
+		<div class="form-group">
+		<label>Kecepatan Angin (Km/24 Jam)</label>
+		<input type="number" step="0.1" class="form-control" placeholder="20" required>
+		</div>
+		<div class="form-group">
+			<label>Temp Min (Celcius)</label>
+			<input type="number" step="0.1" class="form-control" placeholder="20" required>
+		</div>
+		<div class="form-group">
+			<label>Temp Max (Celcius)</label>
+			<input type="number" step="0.1" class="form-control" placeholder="20" required>
+		</div>
+		<div class="form-group">
+			<label>Kelembaban (%)</label>
+			<input type="number" step="0.1" class="form-control" placeholder="20" required>
+		</div>
+		<div class="form-group">
+			<label>Lama Penyinaran Matahari (Menit)</label>
+			<input type="number" step="0.1" class="form-control" placeholder="20" required>
+		</div>
+		<div class="form-group">
+			<label>Penguapan (mm)</label>
+			<input type="number" step="0.1" class="form-control" placeholder="20" required>
+		</div>
+		<button type="submit" class="btn btn-primary">Kirim</button>
+	</form>
+</div>
+

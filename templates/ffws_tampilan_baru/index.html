@@ -1,0 +1,499 @@
+$def with(ctx)
+$ hujan = ctx.get('hujan')
+$ series = ctx.get('series')
+$ pos_tma = ctx.get('pos_tma')
+$ wilayah = ctx.get('wilayah')
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sistem Informasi Hidrologi & Kualitas Air</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- blink -->
+  <style type="text/css">
+  .affix-top { margin-bottom: 0px !important; }
+  </style>
+  <style>
+      #berkedip {
+      animation: blink-animation 1s steps(5, start) infinite;
+      -webkit-animation: blink-animation 1s steps(5, start) infinite;
+      }
+      @keyframes blink-animation {
+      to {
+      visibility: hidden;
+      }
+      @-webkit-keyframes blink-animation {
+      to {
+      visibility: hidden;
+      }
+      }
+  </style>
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/logo_pu.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="/static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/assets/css/style.css" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+     crossorigin=""></script>
+
+  <!-- =======================================================
+  * Template Name: Bootslander - v2.1.0
+  * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+        <!-- <h1 class="text-light"><a href="index.html"><span>Bootslander</span></a></h1> -->
+        <!-- Uncomment below if you prefer to use an image logo -->
+         <a href="index.html"><img src="/static/assets/img/logo-web-v2.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#header">Home</a></li>
+          <!-- <li><a href="#about">Curah Hujan</a></li>
+          <li><a href="#features">Klimatologi</a></li>
+          <li><a href="#gallery">Tinggi Muka Air</a></li>
+          <li><a href="#team">Kekeringan</a></li>
+          <li><a href="#pricing">Kualitas Air</a></li> -->
+          <li class="drop-down"><a href="">Data</a>
+            <ul>
+              <li><a href="/curahhujan">Curah Hujan</a></li>
+              <!-- <li class="drop-down"><a href="#">Drop Down 2</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li> -->
+              <li><a href="/klimatologi">Klimatologi</a></li>
+              <li><a href="/tma">Tinggi Muka Air</a></li>
+              <li><a href="/kekeringan">Kekeringan</a></li>
+              <li><a href="/kualitasair">Kualitas Air</a></li>
+            </ul>
+          </li>
+          <li><a href="http://117.20.58.228:4000/ffws/peta">Peta</a></li>
+          <li class="drop-down"><a href="">Publikasi</a>
+            <ul>
+              <li><a href="https://drive.google.com/file/d/1nKolg5kscywmX35AYat2eX6_-RsK24XG/view?usp=sharing" target="_blank">Majalah Siklus</a></li>
+            </ul>
+          </li>
+          <!-- <li><a href="#">Login</a></li> -->
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+          <div data-aos="zoom-out">
+            <h1>Sistem Informasi Hidrologi & Kualitas Air</h1>
+            <h2>Balai Besar Wilayah Sungai Bengawan Solo</h2>
+            <div class="text-center text-lg-left">
+              <a href="#details" class="btn-get-started scrollto">Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+          <!-- <img src="/static/assets/img/hero-img.png" class="img-fluid animated" alt=""> -->
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g>
+    </svg>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Details Section ======= -->
+    <section id="details" class="details">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-md-4" data-aos="fade-right">
+            <img src="/static/assets/img/details-1.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-8 pt-4" data-aos="fade-up">
+            <h3>Fitur Website</h3>
+            <p class="font-italic">
+              Website sistem informasi hidrologi dan kualitas air Balai Besar Wilayah Sungai Bengawan Solo menyediakan data-data seperti : 
+            </p>
+            <ul>
+              <li><i class="icofont-check"></i> Data Curah Hujan.</li>
+              <li><i class="icofont-check"></i> Data Klimatologi.</li>
+              <li><i class="icofont-check"></i> Data Tinggi Muka Air.</li>
+              <li><i class="icofont-check"></i> Data Kekeringan.</li>
+              <li><i class="icofont-check"></i> Data Kualitas Air.</li>
+            </ul>
+            <p>
+              Data-data tersebut diperoleh dari pengamat pos hidrologi dan alat-alat telemetri yang tersebar di Wilayah Sungai Bengawan Solo.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Details Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Berita</h2>
+          <p>Berita Video</p>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
+            <a href="https://www.youtube.com/watch?v=tCMxsgsJQr0" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up"> 
+          <h2>Data</h2>
+          <p>Data Terkini</p>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h6><img src="/static/images/icons/icon-curah-hujan.png" height="30" class="img-responsive">&nbsp;Hujan</h6>
+            <div id="chart-hujan" style="border:solid 1px #ccc;width: 100%; height: 300px"></div>
+          </div>
+          <div class="col-md-6">
+            <h6><img src="/static/images/icons/icon-muka-air.png" height="30" class="img-responsive">&nbsp;Tinggi Muka Air</h6>
+            <div class="table-responsive">
+              <table class="table">
+                $code:
+                  wil = "0"
+                <tbody>
+                $for p, t in pos_tma:
+                  $if p.wilayah != wil:
+                    $code:
+                      wil = p.wilayah
+                    <tr><td class="bg-info" colspan="3">${wilayah[p.wilayah].upper()}</td></tr>
+                  <tr><td class=""><h6><span class="glyphicon glyphicon-map-marker"></span>&nbsp;<a href="/tma/${p.AgentId}">$p.cname</a></h6></td><td class="text-right"><h6>+${t.get('tma')} m</h6></td><td class="text-right"><h6>${t.get('sampling')}</h6></td></tr>
+                </tbody>
+              </table>
+            </div>  
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Galeri</h2>
+          <p>Galeri Kegiatan Unit Hidrologi</p>
+        </div>
+
+        <div class="row no-gutters" data-aos="fade-left">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+              <a href="/static/assets/img/gallery/gallery-1.jpg" class="venobox" data-gall="gallery-item">
+                <img src="/static/assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
+              <a href="/static/assets/img/gallery/gallery-2.jpg" class="venobox" data-gall="gallery-item">
+                <img src="/static/assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+              <a href="/static/assets/img/gallery/gallery-3.jpg" class="venobox" data-gall="gallery-item">
+                <img src="/static/assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
+              <a href="/static/assets/img/gallery/gallery-4.jpg" class="venobox" data-gall="gallery-item">
+                <img src="/static/assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+              <a href="/static/assets/img/gallery/gallery-5.jpg" class="venobox" data-gall="gallery-item">
+                <img src="/static/assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350">
+              <a href="/static/assets/img/gallery/gallery-6.jpg" class="venobox" data-gall="gallery-item">
+                <img src="/static/assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+              <a href="/static/assets/img/gallery/gallery-7.jpg" class="venobox" data-gall="gallery-item">
+                <img src="/static/assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
+              <a href="/static/assets/img/gallery/gallery-8.jpg" class="venobox" data-gall="gallery-item">
+                <img src="/static/assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+
+        <div class="owl-carousel testimonials-carousel" data-aos="zoom-in">
+
+          <div class="testimonial-item">
+            <img src="/static/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+            <h3>Dody Susanto</h3>
+            <h4>Petugas Klimatologi Stasiun Pabelan</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Hidup harus siap di segala cuaca.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="/static/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+            <h3>Joko Widodo</h3>
+            <h4>Petugas pengukur TMA jurug</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Dari sungai untuk sungai.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Kontak</h2>
+          <p>Kontak Kami</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Lokasi:</h4>
+                <p>Banaran, Pabelan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57169</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>hidrologi.bbwsbs@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Telepon:</h4>
+                <p>08112757475</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" id="map" data-aos-delay="200">
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Unit Hidrologi & Kualitas Air</span></strong>. BBWS Bengawan Solo
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <div id="preloader"></div>
+
+  <script>
+    var series = [{
+      name: 'Hujan Yang Terjadi (mm)',
+      data: [
+    $for k,v in series.items():
+      [$k, $:v],
+    ]
+    }]
+    var hujan_terjadi = [];
+    var das = [];
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="/static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="/static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="/static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="/static/assets/vendor/aos/aos.js"></script>
+  <script>
+
+    var mymap = L.map('map').setView([-7.5607000376808,110.770000000279], 13);
+
+    var marker = L.marker([-7.560044, 110.768680]).addTo(mymap);
+
+    marker.bindPopup("Balai Besar Wilayah Sungai Bengawan Solo").openPopup();
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+      maxZoom: 18,
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1
+    }).addTo(mymap);
+
+  </script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+
+  <script type="text/javascript" src="/static/js/highcharts.js"></script>
+    <script type="text/javascript">
+      \$(document).ready(function() {
+        var blns = 'jan-feb-mar-apr-mei-jun-jul-ags-sep-okt-nop-des'.split('-');
+        var tab = [];
+        series[0].data.forEach((e) => { tab.push(e[0]) });
+        tab.sort((a, b) => { return a - b });
+        var ta = new Date(tab[0]);
+        var tb = new Date(tab[tab.length - 1])
+      var hujanChart = new Highcharts.Chart({
+        chart: {type: 'column', renderTo: 'chart-hujan',
+        },
+        title: {text: 'Dari - Sampai'},
+        xAxis: {type: 'datetime'},
+        yAxis: {
+          title: {text: 'Curah Hujan (mm)'},
+        },
+        series: series
+      });
+        
+        hujanChart.setTitle({text: ta.getDate() +' '+ blns[ta.getMonth()] +' - '+ tb.getDate() +' '+ blns[tb.getMonth()] +' '+ tb.getFullYear()});
+      });
+    </script>
+
+</body>
+
+</html>

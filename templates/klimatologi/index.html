@@ -1,0 +1,52 @@
+$def with(ctx)
+$ pos = ctx.get('pos')
+$ tanggal = ctx.get('tanggal')
+$ sebelum = ctx.get('sebelum')
+$ sesudah = ctx.get('sesudah')
+
+$var p_klimatologi: active
+$var js_foot:
+    <script type="text/javascript" src="/static/js/moment.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-datepicker.js"></script>
+    <script>
+      \$('#datepicker').datepicker({
+        todayHighlight: true, 
+        format: 'yyyy/mm/dd',
+        autoclose: true});
+        \$('#datepicker').on('changeDate', function() {
+              console.log('changeDate');
+              \$('#dp_input').val(\$('#datepicker').datepicker('getFormattedDate'));
+              window.location = '/klimatologi?d=' + \$('#datepicker').datepicker('getFormattedDate');
+              });
+    </script>
+<div class="container">
+    <h2>Status:  <span id="datepicker" data-date="${tanggal.strftime('%Y/%m/%d')}">${tanggal.strftime('%d %b %Y')}</span> <span style="font-size: 14px" class="glyphicon glyphicon-calendar"></span></h2>
+    <table class="table table-bordered boldtable mt-50">
+	    <thead>
+		    <tr>
+			    <th rowspan="2">Pos</th>
+					<th rowspan="2">Curah Hujan<br>(mm)</th>
+			    <th colspan="2">Suhu (&deg;C)</th>
+					<th rowspan="2">Kelembaban<br>(%)</th>
+					<th rowspan="2">Kec. Angin<br>(m/24jam)</th>
+					<th rowspan="2">Durasi Penyinaran<br>(menit)</th>
+					<th rowspan="2">Penguapan<br>(mm/24jam)</th>
+		    </tr>
+				<tr>
+					<th>Min</th>
+					<th>Max</th>
+				</tr>
+	    </thead>
+	    <tbody>
+        $for k in pos:
+          <tr><td>$k.agent.cname</td>
+                <td>$k.ch_m</td>
+								<td class="text-right">${k.temp_min_m}</td><td class="text-right">${k.temp_max_m}</td>
+              <td class="text-right">${k.humi_m}</td>
+              <td class="text-right">${k.kec_angin_m}</td>
+              <td class="text-right">${k.penyinaran_m}</td>
+							<td class="text-right">${k.penguapan_m}</td>
+          </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,88 @@
+$def with(ctx)
+$ hujan = ctx.get('hujan')
+$ series = ctx.get('series')
+$ pos_tma = ctx.get('pos_tma')
+$ wilayah = ctx.get('wilayah')
+$var extra_header:
+    <style type="text/css">
+    .affix-top { margin-bottom: 0px !important; }
+    </style>
+    <style>
+        #berkedip {
+        animation: blink-animation 1s steps(5, start) infinite;
+        -webkit-animation: blink-animation 1s steps(5, start) infinite;
+        }
+        @keyframes blink-animation {
+        to {
+        visibility: hidden;
+        }
+        @-webkit-keyframes blink-animation {
+        to {
+        visibility: hidden;
+        }
+        }
+    </style>
+<!-- -->
+$var js_foot:
+    <script type="text/javascript" src="/static/js/highcharts.js"></script>
+    <script type="text/javascript">
+      \$(document).ready(function() {
+        var blns = 'jan-feb-mar-apr-mei-jun-jul-ags-sep-okt-nop-des'.split('-');
+        var tab = [];
+        series[0].data.forEach((e) => { tab.push(e[0]) });
+        tab.sort((a, b) => { return a - b });
+        var ta = new Date(tab[0]);
+        var tb = new Date(tab[tab.length - 1])
+      var hujanChart = new Highcharts.Chart({
+        chart: {type: 'column', renderTo: 'chart-hujan',
+        },
+        title: {text: 'Dari - Sampai'},
+        xAxis: {type: 'datetime'},
+        yAxis: {
+          title: {text: 'Curah Hujan (mm)'},
+        },
+        series: series
+      });
+        
+        hujanChart.setTitle({text: ta.getDate() +' '+ blns[ta.getMonth()] +' - '+ tb.getDate() +' '+ blns[tb.getMonth()] +' '+ tb.getFullYear()});
+      });
+    </script>
+
+$if session.get('username'):
+  <div style="padding-left: 8px;padding-right: 8px;">
+    <a href="/logout" class="btn btn-block btn-danger" style="margin-top:4px;margin-bottom: 4px;"><span id="berkedip">Admin is On, Logout</span></a>
+  </div>
+<div class="container">
+  <div class="row">
+		<div class="col-md-6">
+      <h2 style="color:#888;padding:20px 0;"><img src="/static/images/icons/icon-curah-hujan.png" height="36" class="img-responsive">&nbsp;Hujan</h2>
+      <div id="chart-hujan" style="border:solid 1px #ccc;width: 100%; height: 300px"></div>
+    </div>
+		<div class="col-md-6">
+			<h2 style="color:#888;padding:20px 0px;"><img src="/static/images/icons/icon-muka-air.png" height="36" class="img-responsive">&nbsp;Tinggi Muka Air</h2>
+      <table class="table">
+      $code:
+        wil = "0"
+      <tbody>
+      $for p, t in pos_tma:
+        $if p.wilayah != wil:
+          $code:
+            wil = p.wilayah
+          <tr><td class="bg-info" colspan="3">${wilayah[p.wilayah].upper()}</td></tr>
+        <tr><td class=""><h4><span class="glyphicon glyphicon-map-marker"></span>&nbsp;<a href="/tma/${p.AgentId}">$p.cname</a></h4></td><td class="text-right"><h4>+${t.get('tma')} m</h4></td><td class="text-right"><h4>${t.get('sampling')}</h4></td></tr>
+      </tbody>
+      </table>
+</div>
+</div>
+</div>
+<script>
+  var series = [{
+    name: 'Hujan Yang Terjadi (mm)',
+    data: [
+  $for k,v in series.items():
+    [$k, $:v],
+  ]
+  }]
+  var hujan_terjadi = [];
+  var das = [];
+</script>

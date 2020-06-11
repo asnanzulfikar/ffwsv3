@@ -1,0 +1,100 @@
+$def with(ctx)
+$ pos = ctx.get('pos')
+$ poses = ctx.get('poses')
+$ data = ctx.get('data')
+$ wilayah = ctx.get('wilayah')
+$var p_curahhujan: active
+$var extra_header:
+    <style>
+        .list-post li {font-size: larger;padding-top:4px;padding-bottom:4px;}
+        .item-wilayah {padding: 5px 0 0 10px;;font-weight:bold;}
+    </style>
+    <link rel="stylesheet" href="/static/css/datepicker3.css">
+$var js_foot:
+    <script type="text/javascript" src="/static/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/static/js/highcharts.js"></script>
+    <script type="text/javascript">
+        \$(document).ready(function(){
+          \$('#datepicker').datepicker({
+            todayHighlight: true, 
+            format: 'yyyy/mm',
+            startView: 'months',
+            minViewMode: 'months',
+            autoclose: true});
+          \$('#datepicker').on('changeDate', function() {
+              window.location = '/curahhujan/$pos.AgentId/' + \$('#datepicker').datepicker('getFormattedDate');
+              });
+            var chart = new Highcharts.Chart({
+                chart: { type: 'column', renderTo: 'column_chart' },
+                title: { text: 'Curah Hujan $data.bulan.strftime("%b %Y")' },
+                tooltip: {
+                    valueDecimals: 2,
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:4px">' +
+                        '{series.name}</td>' +
+                        '<td style="padding:0"><b>{point.y} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                xAxis: {
+                    categories: $data.categories,
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 0,
+                    max: 150,
+                    title: { text: 'Curah Hujan (mm)',
+                        style: {
+                            fontSize: '18px'
+                        }
+                    }
+                },
+                series: series
+            });
+        });
+    </script>
+<!-- -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2><a href="/curahhujan" title="Daftar Pos Hujan" style="text-decoration: none;"><span class="glyphicon glyphicon-chevron-left"></span></a> 
+                <span class="dropdown">
+                    <a id="ddPos" href="#" class="dropdown-toggle" style="text-decoration:none;" data-target="#" data-toggle="dropdown" aria-haspopup="true" expanded="false">Pos $pos.cname <span class="caret"></span></a>
+            <ul class="dropdown-menu list-pos">
+        $code:
+            wil = "0"
+        $for a in poses:
+            $if a.wilayah != wil:
+                $code:
+                    wil = a.wilayah
+                <li class="bg-primary item-wilayah">${wilayah[wil]}</li>
+            <li><a href="/curahhujan/${a.AgentId}/${data.bulan.strftime("%Y")}/${data.bulan.strftime("%m")}">$a.cname</a></li>
+        </ul>
+        </span></h2>
+        </div>
+        <div class="col-sm-6" style="padding-top: 20px;">
+            <div class="btn-group" role="group" style="float: right;">
+                <a href="/curahhujan/$pos.AgentId" class="btn btn-primary">Jam-jaman</a>
+                <a href="#" class="btn btn-default">Harian</a>
+                <a href="/curahhujan/$pos.AgentId/daily" class="btn btn-primary">10 Harian</a>
+                <a href="/curahhujan/$pos.AgentId/bulanan" class="btn btn-primary">Bulanan</a>
+                <a href="/curahhujan/$pos.AgentId/tertinggi" class="btn btn-primary">Maksimum</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="column_chart" style="width: 100%; height: 400px"></div>
+        </div>
+    </div>
+</div><!-- container -->
+<script>
+var series = [
+  {
+      name: '$data.bulan.strftime('%B')',
+      data: $data.series
+  }
+
+];
+</script>

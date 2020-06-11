@@ -1,0 +1,42 @@
+$def with(ctx)
+$ petugas = ctx.get('petugas')
+
+<h1>Data Petugas Pos Hidrologi</h1>
+
+<div class="row">
+    <div class="col-md-12">
+    	<div class="table-responsive">
+    		<table class="table table-bordered table-stripped">
+	            <thead>
+	                <tr>
+	                    <th>Nama</th>
+	                    <th>Alamat</th>
+	                    <th>Tempat Lahir</th>
+	                    <th>Tanggal Lahir</th>
+	                    <th>SMS</th>
+	                    <th>WA</th>
+	                    <th>Mulai Tugas</th>
+	                    <th>Lulusan</th>
+	                    <th>Lokasi Pengamatan</th>
+	                    <th>Kode</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	            $for d in petugas:
+	                <tr>
+	                    <td>$d.nama</td>
+	                    <td>$d.alamat</td>
+	                    <td>$d.tp_lahir</td>
+	                    <td>$d.tg_lahir</td>
+	                    <td>$d.sms</td>
+	                    <td>$d.wa</td>
+	                    <td>$d.mulai</td>
+	                    <td>$d.lulusan</td>
+	                    <td>$d.agent.cname</td>
+	                    <td>$d.kode</td>
+	                </tr>
+	            </tbody>
+        	</table>
+    	</div>
+    </div>
+</div>

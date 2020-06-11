@@ -1,0 +1,31 @@
+$def with (ctx)
+$ poses = ctx.get('poses')
+$ js_foot = ctx.get('js_foot')
+$var p_kualitas_air: active
+$var extra_header:
+    <script src="/static/js/underscore-min.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+      }
+      #legend {
+        font-family: Arial, sans-serif;
+        background: #fff;
+        padding: 10px;
+        margin: 10px;
+        border: 3px solid #000;
+      }
+      #legend h5 {
+        margin-top: 0;
+      }
+      #legend img {
+        vertical-align: middle;
+      }
+    </style>
+<!-- -->
+$var js_foot: $:js_foot
+  	<div id="map" style="width: 100%; height: 500px;"></div>
+  	<div id="legend"><h5>Legenda</h5></div>

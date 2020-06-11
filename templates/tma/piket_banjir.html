@@ -1,0 +1,125 @@
+$def with (tma, wilayah, meta, js)
+$var p_tma: active
+$var js_foot:
+    <script>
+        $$(document).ready(function(){
+            $$('.s1').prepend("<span class='glyphicon glyphicon-flag'></span> ");
+            $$('.s2').prepend("<span class='glyphicon glyphicon-flag'></span> ");
+            $$('.s3').prepend("<span class='glyphicon glyphicon-flag'></span> ");
+        });
+    </script>
+<!-- -->
+<div class="container">
+    <table class="table table-bordered boldtable">
+        <thead>
+        <tr>
+            <th rowspan="3">No</th>
+            <th rowspan="3">POS TMA</th>
+            <th rowspan="3" colspan="3">LEVEL SIAGA (TTG)</th>
+            <th><a data-pjax href="?d=$:meta.get('before')"><span class="glyphicon glyphicon-arrow-left"></span></a></th>
+            <th colspan="11">$meta['now']</th>
+            <th><a data-pjax href="?d=$:meta.get('after')"><span class="glyphicon glyphicon-arrow-right"></span></a></th>
+        </tr>
+        <tr>
+            <th colspan="13">WAKTU (WIB)</th>
+        </tr>
+        <tr>
+            <th colspan="5">TELEMETRI</th>
+            <th colspan="8">MANUAL</th>
+        </tr>
+        </thead>
+        <tbody>
+$code:
+    wil = "0"
+$for t in tma:
+    $if t.pos.wilayah != wil:
+        $code:
+            wil = t.pos.wilayah
+        <tr>
+            <td colspan="2" class="text-center col-wilayah">Wilayah $wilayah[t.pos.wilayah]</td>
+            <td class="text-center col-wilayah">SH</td>
+            <td class="text-center col-wilayah">SK</td>
+            <td class="text-center col-wilayah">SM</td>
+            <td class="text-center col-wilayah">06.00</td>
+            <td class="text-center col-wilayah">12.00</td>
+            <td class="text-center col-wilayah">18.00</td>
+            <td class="text-center col-wilayah">00.00</td>
+
+            <td class="text-center col-wilayah">Last Data</td>
+
+            <td class="text-center col-wilayah">00.00</td>
+            <td class="text-center col-wilayah">02.00</td>
+            <td class="text-center col-wilayah">04.00</td>
+            <td class="text-center col-wilayah">06.00</td>
+            <td class="text-center col-wilayah">12.00</td>
+            <td class="text-center col-wilayah">18.00</td>
+            <td class="text-center col-wilayah">20.00</td>
+            <td class="text-center col-wilayah">22.00</td>
+            
+
+        </tr>
+    <!-- end if -->
+    <tr>
+        <td>$loop.index</td>
+        <td title="$t.pos.AgentId"><a href="/tma/$t.pos.AgentId">$t.pos.cname</a> 
+        $if t.pos.kab:
+            ($t.pos.kab)
+        </td>
+        <td class="text-right r col-s1" style="background-color: green;"><span>${'%.2f' % t.pos.sh}</span></td>
+        <td class="text-right r col-s2" style="background-color: yellow;"><span>${'%.2f' % t.pos.sk}</span></td>
+        <td class="text-right r col-s3" style="background-color: red;"><span>${'%.2f' % t.pos.sm}</span></td>
+        <td class="text-right r pagi telemetri $t.tma.pagi.tstatus" data-ttime-pagi="$t.tma.pagi.ttime"><abbr title="waktu : $t.tma.pagi.ttime, tma lokal : $t.tma.pagi.lokal">$t.tma.pagi.ttg</abbr></td>
+
+        <td class="text-right r siang telemetri $t.tma.siang.tstatus" data-ttime-sore="$t.tma.siang.ttime"><abbr title="waktu : $t.tma.siang.ttime, tma lokal: $t.tma.siang.lokal">$t.tma.siang.ttg</abbr></td>
+
+        <td class="text-right r sore telemetri $t.tma.sore.tstatus" data-ttime-sore="$t.tma.sore.ttime"><abbr title="waktu : $t.tma.sore.ttime, tma lokal : $t.tma.sore.lokal">$t.tma.sore.ttg</abbr></td>
+
+        <td class="text-right r tmalam telemetri $t.tma.tmalam.tstatus" data-ttime-tmalam="$t.tma.sore.ttime"><abbr title="waktu : $t.tma.tmalam.ttime, tma lokal : $t.tma.tmalam.lokal">$t.tma.tmalam.ttg</abbr></td>
+
+        <td><small> $t.tma.last_tma<br>$t.tma.jam </small> </td>
+
+        $if t.tma.jam00.origin:
+            <td class="text-right r jam000 manual $t.tma.jam00.mstatus" data-mtime-sore="$t.tma.jam00.mtime"><abbr title="$t.tma.jam00.manual_lokal"><span style="color:blue">*</span>$t.tma.jam00.manual</abbr></td>
+        $else:
+            <td class="text-right r jam000 manual $t.tma.jam00.mstatus" data-mtime-sore="$t.tma.jam00.mtime"><abbr title="$t.tma.jam00.manual_lokal">$t.tma.jam00.manual</abbr></td>
+
+        $if t.tma.jam02.origin:
+            <td class="text-right r jam02 manual $t.tma.jam02.mstatus" data-mtime-sore="$t.tma.jam02.mtime"><abbr title="$t.tma.jam02.manual_lokal"><span style="color:blue">*</span>$t.tma.jam02.manual</abbr></td>
+        $else:
+            <td class="text-right r jam02 manual $t.tma.jam02.mstatus" data-mtime-sore="$t.tma.jam02.mtime"><abbr title="$t.tma.jam02.manual_lokal">$t.tma.jam02.manual</abbr></td>
+
+        $if t.tma.jam04.origin:
+            <td class="text-right r jam04 manual $t.tma.jam04.mstatus" data-mtime-sore="$t.tma.jam04.mtime"><abbr title="$t.tma.jam04.manual_lokal"><span style="color:blue">*</span>$t.tma.jam04.manual</abbr></td>
+        $else:
+            <td class="text-right r jam04 manual $t.tma.jam04.mstatus" data-mtime-sore="$t.tma.jam04.mtime"><abbr title="$t.tma.jam04.manual_lokal">$t.tma.jam04.manual</abbr></td>
+
+        $if t.tma.pagi.origin:
+            <td class="text-right r pagi manual $t.tma.pagi.mstatus" data-mtime-pagi="$t.tma.pagi.mtime"><abbr title="$t.tma.pagi.manual_lokal"><span style="color:blue">*</span>$t.tma.pagi.manual</abbr></td>
+        $else:
+            <td class="text-right r pagi manual $t.tma.pagi.mstatus" data-mtime-pagi="$t.tma.pagi.mtime"><abbr title="$t.tma.pagi.manual_lokal">$t.tma.pagi.manual</abbr></td>
+
+        $if t.tma.siang.origin:
+            <td class="text-right r siang manual $t.tma.siang.mstatus" data-mtime-siang="$t.tma.siang.mtime"><abbr title="$t.tma.siang.manual_lokal"><span style="color:blue">*</span>$t.tma.siang.manual</abbr></td>
+        $else:
+            <td class="text-right r siang manual $t.tma.siang.mstatus" data-mtime-siang="$t.tma.siang.mtime"><abbr title="$t.tma.siang.manual_lokal">$t.tma.siang.manual</abbr></td>
+
+        $if t.tma.sore.origin:
+            <td class="text-right r sore manual $t.tma.sore.mstatus" data-mtime-sore="$t.tma.sore.mtime"><abbr title="$t.tma.sore.manual_lokal"><span style="color:blue">*</span>$t.tma.sore.manual</abbr></td>
+        $else:
+            <td class="text-right r sore manual $t.tma.sore.mstatus" data-mtime-sore="$t.tma.sore.mtime"><abbr title="$t.tma.sore.manual_lokal">$t.tma.sore.manual</abbr></td>
+
+        $if t.tma.jam20.origin:
+            <td class="text-right r jam20 manual $t.tma.jam20.mstatus" data-mtime-sore="$t.tma.jam20.mtime"><abbr title="$t.tma.jam20.manual_lokal"><span style="color:blue">*</span>$t.tma.jam20.manual</abbr></td>
+        $else:
+            <td class="text-right r jam20 manual $t.tma.jam20.mstatus" data-mtime-sore="$t.tma.jam20.mtime"><abbr title="$t.tma.jam20.manual_lokal">$t.tma.jam20.manual</abbr></td>
+
+        $if t.tma.jam22.origin:
+            <td class="text-right r jam22 manual $t.tma.jam22.mstatus" data-mtime-sore="$t.tma.jam22.mtime"><abbr title="$t.tma.jam22.manual_lokal"><span style="color:blue">*</span>$t.tma.jam22.manual</abbr></td>
+        $else:
+            <td class="text-right r jam22 manual $t.tma.jam22.mstatus" data-mtime-sore="$t.tma.jam22.mtime"><abbr title="$t.tma.jam22.manual_lokal">$t.tma.jam22.manual</abbr></td>
+        
+    </tr>
+</tbody>
+</table>
+</div>
+

@@ -1,0 +1,60 @@
+$def with (ctx)
+$ kategori = ctx.get('kategori')
+$ series = ctx.get('data')
+$ did = ctx.get('did')
+$ jenis_prima = ctx.get('jenis_prima')
+$ pname = ctx.get('pname')
+$var js_foot:
+	<script>
+		var series = $:series;
+	</script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script>
+      \$('#container').highcharts({
+      	chart: {
+	        type: 'line',
+	        zoomType: 'x',
+	        panning: true,
+	        panKey: 'shift'
+    	},
+    	
+        title: {
+          text: 'Grafik Sensor Primabot $jenis_prima $did (Pos $pname)'
+        },
+
+        subtitle: {
+          text: 'SUMBER DATA : PRIMA GATEWAY'
+        },
+
+        xAxis: {
+          categories: $:kategori
+        },
+
+        yAxis: {
+          min: 0,
+          title: {
+                    text: 'Value'
+                 },
+        },
+
+        series: series,
+
+        exporting: {
+          menuItemDefinitions: {
+              // Custom definition
+          },
+          buttons: {
+              contextButton: {
+                  menuItems: ['viewFullscreen']
+              }
+          }
+        }
+        
+      });
+    </script>
+
+<div class="container">
+  <div id="container" style="min-width: 600px; height: 450px; margin: 0 auto"></div>
+</div>

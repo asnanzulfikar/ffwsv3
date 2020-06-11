@@ -1,0 +1,51 @@
+$def with (ctx)
+$ poses = ctx.get('poses', [])
+$ data = ctx.get('data', [])
+$ waktu = ctx.get('waktu')
+$ wilayah = ctx.get('wilayah')
+$var p_kualitas_air: active
+$code:
+    bulan = 'Jan_Feb_Mar_Apr_Mei_Jun_Jul_Ags_Sep_Okt_Nop_Des'.split('_')
+$var extra_header:
+    <style>
+      .table-legenda { border: solid 1px #ccc; }
+      .table-legenda th, .table-legenda td { padding: 10px; border: solid 1px #ddd; }
+    </style>
+$var js_foot:
+    <script type="text/javascript">
+        var uri = 'kualitasair';
+    </script>
+<!-- -->
+<!-- Chart: DO, BOD, COD, TSS, Nitrat, Nitrit, Minyak&Lemak, Total Detergen, Total Coliform -->
+
+<div class="container">
+    <h2>Index Pencemaran Data Terakhir</h2>
+    <table class="table table-bordered boldtable">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>POS Kualitas Air</th>
+                <th>Data Terakhir</th>
+                <!-- <th>IP Data Terakhir</th> -->
+                <!-- <th>Chart</th> -->
+            </tr>
+        </thead>
+        <tbody>
+    $for w in wilayah:
+        <tr>
+            <td colspan="3" style="background-color: #428bca;color: #fff">
+                <center>
+                    Wilayah $wilayah.get(w)
+                </center>
+            </td>
+        </tr>
+        $for k in data:
+            $if k[4] == w:
+                <tr>
+                    <td>$loop.index</td>
+                    <td><a href="kualitasair/chart/${k[0]}">${k[1]}</a></td>
+                    <td>${k[2]}</td>
+                </tr>
+  </tbody>
+</table> 
+</div><!-- container -->

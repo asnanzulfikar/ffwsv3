@@ -1,0 +1,151 @@
+$def with (ctx)
+$ test = ctx.get('test')
+$ data = ctx.get('data')
+$ pname = ctx.get('pname')
+$ series = ctx.get('series')
+$var p_kualitas_air: active
+$var extra_header:
+    <style>
+      .table-legenda { border: solid 1px #ccc; }
+      .table-legenda th, .table-legenda td { padding: 10px; border: solid 1px #ddd; }
+    </style>
+$var js_foot:
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script>
+      \$('#container').highcharts({
+        chart: {
+          type: 'column'
+        },
+
+        title: {
+          text: 'Grafik Indeks Pencemaran'
+        },
+
+        subtitle: {
+          text: 'Unit Hidrologi BBWS Bengawan Solo'
+        },
+
+        xAxis: {
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+
+        yAxis: {
+          min: 0,
+          title: {
+                    text: 'Nilai Index Pencemaran (IP)'
+                 },
+          // plotBands: [
+          //   {
+          //     color: '#00BFFF', // Color blue
+          //     from:0,
+          //     to:1 
+          //   },{
+          //     color: 'rgba(0,255,0,0.6)', // Color green
+          //     from:1,
+          //     to:5   
+          //   },{
+          //     color: 'rgba(255,255,0,0.6)', // Color yellow
+          //     from:5,
+          //     to:10 
+          //   },{
+          //     color: 'rgba(255,0,0,0.6)', // Color red
+          //     from:10,
+          //     to:30
+          //   } 
+          // ],
+          plotLines: [
+            {
+                value: 1,
+                color: 'blue',
+                dashStyle: 'shortdash',
+                width: 2,
+                label: {
+                    text: 'Memenuhi Baku Mutu',
+                    y:15
+                }
+            }, 
+            {
+                value: 5,
+                color: 'green',
+                dashStyle: 'shortdash',
+                width: 2,
+                label: {
+                    text: 'Cemar Ringan',
+                    y:15
+                }
+            },
+            {
+                value: 10,
+                color: 'yellow',
+                dashStyle: 'shortdash',
+                width: 2,
+                label: {
+                    text: 'Cemar Sedang',
+                    y:15
+                }
+            },
+            {
+                value: 15,
+                color: 'red',
+                dashStyle: 'shortdash',
+                width: 2,
+                label: {
+                    text: 'Cemar Berat',
+                    y:15
+                }
+            },
+            {
+                value: 25,
+                color: 'red',
+                dashStyle: 'shortdash',
+                width: 2,
+                label: {
+                    text: 'Cemar Berat',
+                    y:15
+                }
+            },
+            {
+                value: 35,
+                color: 'red',
+                dashStyle: 'shortdash',
+                width: 2,
+                label: {
+                    text: 'Cemar Berat',
+                    y:15
+                }
+            }
+          ]
+        },
+
+
+        series: $data,
+
+        exporting: {
+          menuItemDefinitions: {
+              // Custom definition
+          },
+          buttons: {
+              contextButton: {
+                  menuItems: ['viewFullscreen']
+              }
+          }
+        }
+      });
+    </script>
+
+<div class="container">
+
+  <h2><a href="/kualitasair"><span class="glyphicon glyphicon-chevron-left"></span></a> Index Pencemaran Pos $pname</h2>
+  <div id="container" style="min-width: 600px; height: 450px; margin: 0 auto"></div>
+
+  <p>Evaluasi terhadap Nilai Index Pencemaran</p>
+  <table class="table-legenda">
+      <tr><!-- <td style="background-color: #00BFFF"></td> --><th>0 <= IP <= 1.0</th><td>Memenuhi Baku Mutu</td></tr>
+      <tr><!-- <td style="background-color: rgba(0,255,0,0.6)"></td> --><th>1.0 < IP <= 5.0</th><td>Cemar Ringan</td></tr>
+      <tr><!-- <td style="background-color: rgba(255,255,0,0.6)"></td> --><th>5.0 < IP <= 10</th><td>Cemar Sedang</td></tr>
+      <tr><!-- <td style="background-color: rgba(255,0,0,0.6)"></td> --><th>IP > 10</th><td>Cemar Berat</td></tr>
+  </table>
+
+</div>

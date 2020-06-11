@@ -1,0 +1,62 @@
+$def with (curah_hujan, meta, wilayah)
+$var p_curahhujan: active
+$var js_foot:
+    <script type="text/javascript" src="/static/js/bootstrap-datepicker.js"></script>
+    <script>
+      \$('#datepicker').datepicker({
+        todayHighlight: true, 
+        format: 'yyyy/mm/dd',
+        autoclose: true});
+        \$('#datepicker').on('changeDate', function() {
+              window.location = '/curahhujan?d=' + \$('#datepicker').datepicker('getFormattedDate');
+              });
+    </script>
+<div class="container">
+    <center>
+    	<b>INFO HUJAN BBWS BENGAWAN SOLO
+    	<br>
+    	STATUS $:meta.get('now').strftime('%d %B %Y') PUKUL 
+    	<script type="text/javascript">
+    		var d = new Date();
+    		var m=d.getMinutes();
+        m = m > 9 ? m : '0' + m;
+    		document.write(d.getHours()+":"+m)
+
+    		// var d = new Date();
+    		// var s = d.format("hh:mm:ss tt");
+    		// document.write(s);
+    	</script>
+		</b>
+	</center>
+    <br>
+    <table class="table table-bordered boldtable">
+        <thead>
+          <tr>
+            <th rowspan="3">Pos Hujan</th>
+            <th>Total Telemetri</th>
+          </tr>
+        </thead>
+        <tbody>
+  $code:
+      wil = "0"
+  $for c in curah_hujan:
+      $if c['ch']['total'] > 0:
+        $if c['pos'].wilayah != wil:
+            $code:
+                wil = c['pos'].wilayah
+            <tr>
+                <td colspan="8" class="text-center col-wilayah">Wilayah $wilayah[c['pos'].wilayah]</td>
+            </tr>
+
+        <tr>
+            <td><a href="/curahhujan/$c['pos'].AgentId">$c['pos'].cname</a>
+            $if c['pos'].kab:
+                ($c['pos'].kab)
+            </td>
+            <td class="text-right ch total">${'%.1f' % c['ch']['total']}</td>
+        </tr>
+    <!-- -->
+             </tbody>
+         </table>
+    </div>
+
