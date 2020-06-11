@@ -1,0 +1,96 @@
+Suyanto|Pendem RT 01/RW 01, Selopuro, Batuwarno, Wonogiri|S 1|Batuwarno|Penjaga/ Pengamat Pos|082135619310|2014-01-01|Penatagunaan SDA|P.H.1.1|Wonogiri|1958-10-04
+Mulyono|Dk. Bometen RT 11/RW05, Ngandong, Gantiwarno, Klaten|STM|Dengkeng Hulu|Penjaga/ Pengamat Pos|081350072809|2019-01-01|Penatagunaan SDA|P.H.1.2|Klaten|1973-04-05
+Winahyu Wuri Hartanti|Ngrembang, RT 1/RW 5 Giriwoyo, Wonogiri|D 3|Giriwoyo|Penjaga/ Pengamat Pos|08112645994|2012-01-01|Penatagunaan SDA|P.H.1.3|Wonogiri|1973-07-21
+Agus Sutopo|Dk. Gunungan RT 01/RW 02, Gunungan, Manyaran, Wonogiri|SMA|Gunungan|Penjaga/ Pengamat Pos|082322604276|2019-01-01|Penatagunaan SDA|P.H.1.4|Surakarta|1976-08-12
+Tukino|Trombol Wetan, RT 09/RW 03, Jatipurwo, Jatipuro, Karanganyar|SMA|Jatipuro|Penjaga/ Pengamat Pos|081329940755|2014-01-01|Penatagunaan SDA|P.H.1.5|Karanganyar|1965-07-28
+Sri Hartini|Jatisrono, RT 01/RW 01, Jatisrono, Wonogiri|SMA|Jatisrono|Penjaga/ Pengamat Pos|081226151512|2005-01-01|Penatagunaan SDA|P.H.1.6|Wonogiri|1967-06-08
+Menik Sri Hartanti|Tanjungsari RT 01/RW 02, Blagung, Simo, Boyolali|SMA|Kalijambe|Penjaga/ Pengamat Pos|085728217091|2016-01-01|Penatagunaan SDA|P.H.1.8|Sragen|1972-06-20
+Sutarto|Popongan RT 02/RW 08 Popongan, Karanganyar, Karanganyar|SLTA|Karangpandan|Penjaga/ Pengamat Pos|081227307375|2014-01-01|Penatagunaan SDA|P.H.1.9|Karanganyar|1964-05-14
+Surati|Prayunan, RT 03/RW 01, Kedungupit, Kedungupit, Sragen|SMA|Kedungupit ARR|Penjaga/ Pengamat Pos|085728748027|2017-01-01|Penatagunaan SDA|P.H.1.10|Sragen|1973-11-13
+Sri Rahayu|Dk. Karangsari RT 01/RW01, Kiringan, Boyolali, Boyolali|SMA|Kiringan|Penjaga/ Pengamat Pos|081393404468|2019-01-01|Penatagunaan SDA|P.H.1.11|Boyolali|1975-04-19
+Agus Santoso|Dk. Sobrah Gede RT 03/RW 10 Buntalan, Klaten Tengah, Klaten|SLTP|Klaten|Penjaga/ Pengamat Pos|085743119595|2012-01-01|Penatagunaan SDA|P.H.1.12|Klaten|1984-08-11
+Novi Ariyanti|Magangrejo RT 09/RW 02, Nepen, Teras, Boyolali|SMA|Nepen|Penjaga/ Pengamat Pos|085807487465|2017-01-01|Penatagunaan SDA|P.H.1.13|Boyolali|1992-05-13
+Darti|Dk. Sekanem RT 01/RW 15, Gedong, Pracimantoro, Wonogiri|SMP|Parangjoho|Penjaga/ Pengamat Pos|082136356130|2019-01-01|Penatagunaan SDA|P.H.1.15|Wonogiri|1996-01-31
+Mulyadi|Sambiroto, RT 03/RW 03, Purwantoro, Wonogiri|SD|Pracimantoro|Penjaga/ Pengamat Pos|087736408699|2011-01-01|Penatagunaan SDA|P.H.1.17|Wonogiri|1951-10-07
+Walyanto|Cetok, RT 02/RW 03 Baturan, Gantiwarno, Klaten|SMP|Rejoso|Penjaga/ Pengamat Pos|085729400222|2016-01-01|Penatagunaan SDA|P.H.1.18|Klaten|1980-04-29
+Budhi Andoko|Dk. Song Putri Wetan RT 01/RW 01, Sindukarto, Eromoko, Wonogiri|SMA|Song Putri|Penjaga/ Pengamat Pos|081326969600|2019-01-01|Penatagunaan SDA|P.H.1.19|Wonogiri|1983-08-21
+Dwi Maryanto|Gilis, RT 07/RW-, Katelan, Tangen, Sragen|SMA|Tangen  Bridge|Penjaga/ Pengamat Pos|085327579711|2017-01-01|Penatagunaan SDA|P.H.1.20|Sragen|2017-03-28
+Lilik Mujianto|Ngunut RT 04/RW 06 Tawangmangu, Karanganyar|S 1|Tawangmangu|Penjaga/ Pengamat Pos|081336536218|2011-01-01|Penatagunaan SDA|P.H.1.21|Karanganyar|1962-01-22
+Anton Setiawan|Tempuran RT 04/RW 06 Bolon, Colomadu, Karanganyar|SMK|Tritis|Penjaga/ Pengamat Pos|085727410073|2011-01-01|Penatagunaan SDA|P.H.1.22|Karanganyar|1990-04-18
+Wildan Aljundi|Pojok RT 01/RW 01, Delingan, Karanganyar, Karanganyar|S 1|Waduk Delingan|Penjaga/ Pengamat Pos|082323188574|2014-01-01|Penatagunaan SDA|P.H.1.23|Karanganyar|1996-02-12
+Esti Winanti|Nawangan Kidul RT 01/RW07 Platarejo, Giriwoyo, Wonogiri|SMP|Waduk Nawangan|Penjaga/ Pengamat Pos|085220445052|2016-01-01|Penatagunaan SDA|P.H.1.24|Wonogiri|1996-10-10
+Aris Sugiyarto|Jl. Mukhiyar RT 002/RW 001, Lengkong, Sukorejo, Ponorogo|SLTP|Bangunsari|Penjaga/ Pengamat Pos|0895393313089|2017-01-01|Penatagunaan SDA|P.H.2.25|Pacitan|1996-07-16
+Yudi Pratama|Ds. Kresek RT 001/RW 001, Wungu, Madiun|SLTP|Jatirogo|Penjaga/ Pengamat Pos|081333209425|2014-01-01|Penatagunaan SDA|P.H.2.26|Oku|1975-08-16
+Wiwid Krysdianto|Jl. Kyai Mojo Gg. Laos, Ketanggi, Ngawi||Jururejo|Penjaga/ Pengamat Pos|085815090002||Penatagunaan SDA|P.H.2.27|Ngawi|1983-10-26
+Purwahyudi Imam Widagdo|Bolo RT 003/RW 004 Kebonagung, Kebonagung, Pacitan|SLTA|Kebonagung|Penjaga/ Pengamat Pos|085332001866|2009-01-01|Penatagunaan SDA|P.H.2.28|Pacitan|1986-05-28
+Sugeng Widodo|Dk. Krajan, RT 002/RW 001 Sempu, Nawangan, Pacitan|SLTA|Nawangan - Grindulu|Penjaga/ Pengamat Pos|085326680211|2012-01-01|Penatagunaan SDA|P.H.2.29|Pacitan|1977-07-10
+Suliyawati Hartini|Jl. MP.H. Thamrin Gang Delima No. 8, Ngawi|SLTA|Ngawi|Penjaga/ Pengamat Pos|085331911949|2007-01-01|Penatagunaan SDA|P.H.2.30|Ngawi|1965-05-07
+Dwi Agus Jainuri|Pule,RT  002/RW 001, Ngrambe, Ngawi|SLTA|Ngrambe|Penjaga/ Pengamat Pos|085229988899|1998-01-01|Penatagunaan SDA|P.H.2.31|Ngawi|1982-01-10
+Assep Ichwahyudi|Tegalrejo, RT 001/RW 001, Nanggungan, Pacitan, Pacitan|S 1|Pacitan ARR|Penjaga/ Pengamat Pos|081245274303|2016-01-01|Penatagunaan SDA|P.H.2.32|Pacitan|1984-02-09
+Sundoyo|Dukuh Kresek Badegan|SLTA|Purwantoro|Penjaga/ Pengamat Pos|085229528027|2010-01-01|Penatagunaan SDA|P.H.2.33|Ponorogo|1980-12-10
+Muhammad Yogi Oktavian|Dk. Krajan, RT 02/RW 01 Menggare, Slahung, Ponorogo|SLTA|Slahung|Penjaga/ Pengamat Pos|082234869609|2017-01-01|Penatagunaan SDA|P.H.2.34|Ponorogo|1996-10-09
+Wahyuhadi Fakturohman|Dk. Dalangan RT 02/RW 02, Ds. Sooko, Sooko, Ponorogo|SMK|Sooko|Penjaga/ Pengamat Pos|081333690123|2018-01-01|Penatagunaan SDA|P.H.2.35|Ponorogo|1996-08-19
+Kadam|Dk. Ringin Asri RT 04/RW05, Tegalombo, Tegalombo, Pacitan|SLTA|Tegalombo|Penjaga/ Pengamat Pos|081938703270|2019-01-01|Penatagunaan SDA|P.H.2.36|Pacitan|1968-01-16
+Kukuh Budiono|Dk. Sahang  RT 02/ RW01, Sahang, Ngebel, Ponorogo|SLTA|Telaga Ngebel|Penjaga/ Pengamat Pos|085604479468|2018-01-01|Penatagunaan SDA|P.H.2.37|Ponorogo|1985-04-27
+Dwi Wahyuningrum|Sidomulyo RT 23/RW 04, Wonoasri,  Madiun|SLTA|Waduk Dawuhan|Penjaga/ Pengamat Pos|081259844035|2016-01-01|Penatagunaan SDA|P.H.2.38|Madiun|1995-10-01
+Nurmawati|Dk. Ngrejeng RT 04/RW 01, Puntukdoro, Plaosan, Magetan|SMP|Waduk Gonggang|Penjaga/ Pengamat Pos|081804448981|2019-01-01|Penatagunaan SDA|P.H.2.39|Magetan|1995-10-22
+Surono|Kedungbrubus Baru, Bulu, Pilangkenceng, Madiun||Waduk Kedung Brubus|Penjaga/ Pengamat Pos|082332098509||Penatagunaan SDA|P.H.2.40|Madiun|1978-05-06
+Yeni Murdianti|Dawuhan, RT 09/RW 02, Dawuhan, Pilangkenceng, Madiun|SMA|Waduk Notopuro|Penjaga/ Pengamat Pos|081259698754|2019-01-01|Penatagunaan SDA|P.H.2.41|Madiun|1998-09-22
+Purwanto|Dampit RT 04/RW 01, Bringin, Ngawi|SD|Waduk Pondok|Penjaga/ Pengamat Pos|085749039647|2014-01-01|Penatagunaan SDA|P.H.2.42|Ngawi|1981-10-12
+Agus Widayat|Kedungceleng RT 021/RW 008, Sumber Bening, Bringin, Ngawi|SLTP|Waduk Sangiran|Penjaga/ Pengamat Pos|081226099011|2015-01-01|Penatagunaan SDA|P.H.2.43|Ngawi|1988-04-16
+Rokim|Mojopuro, RT 01/ RW 01 Babatan, Balongpanggang|SLTP|Balongpanggang - Gresik|Penjaga/ Pengamat Pos|087752183900|2010-01-01|Penatagunaan SDA|P.H.3.44|Gresik|1972-03-08
+Sudarim|Dk. Doplang, RT 08/ RW 01 Doplang, Jati, Blora|S 1|Doplang - Blora|Penjaga/ Pengamat Pos|081325634090|1980-01-01|Penatagunaan SDA|P.H.3.47|Blora|1957-05-17
+Yuni Astutik|Telaga, RT 02/RW 02, Sambopinggir, Krangbinangun, Lamongan||Karangbinangun|Penjaga/ Pengamat Pos||2019-01-01|Penatagunaan SDA|P.H.3.48|Lamongan|1983-02-01
+Yudi Dwi Susanto|Maderejo Gg. XI No. 22 RT 02/ RW 10 Made, Lamongan|S 1|Lamongan|Penjaga/ Pengamat Pos|085648311719||Penatagunaan SDA|P.H.3.49|Bojonegoro|1963-05-18
+Chusairi|Putat Lor RT 05/ RW 02, Putat Lor, Menganti, Gresik|SLTP|Menganti|Penjaga/ Pengamat Pos|081331242014|2017-01-01|Penatagunaan SDA|P.H.3.50|Gresik|1976-06-30
+Agus Prastiono|Dk. Krajan RT 01/RW 02, Tingkis, Singgahan, Tuban|SMA|Nglirip - Tuban|Penjaga/ Pengamat Pos|082330436042|2018-01-01|Penatagunaan SDA|P.H.3.51|Tuban|1992-08-29
+Samsul Sugianto|Dk. Tretes RT 09/RW 03, Kedungsumber, Temayang, Bojonegoro|SMP|Pacal Dam|Penjaga/ Pengamat Pos|082352006624|2019-01-01|Penatagunaan SDA|P.H.3.52|Bojonegoro|1993-10-28
+Slamet Sugiarto|JL. Dr. Soetomo RT 18/ RW 06, Padangan, Bojonegoro|S 1|Padangan|Penjaga/ Pengamat Pos|081259666568|2020-01-01|Penatagunaan SDA|P.H.3.53|Blora|1954-05-11
+Dedy Kristiawan|Dk. Dodol, RT 20/RW 04, Pajeng, Gondang, Bojonegoro|SMK|Pajeng|Penjaga/ Pengamat Pos|081230634082|2012-01-01|Penatagunaan SDA|P.H.3.54|Nganjuk|1979-07-22
+Agus Dino Hariyanto|Dk. Pulo, Ds. Pilang, RT 01/RW 04, Kec. Randublatung, Blora|SMK|Randublatung|Penjaga/ Pengamat Pos|085290248857|2019-01-01|Penatagunaan SDA|P.H.3.55|Blora|1998-08-10
+Patemi|Kalangan RT 02/ RW 01 Sembung, Sukorame, Lamongan|SLTP|Sembung|Penjaga/ Pengamat Pos|085733184773|2019-01-01|Penatagunaan SDA|P.H.3.56|Lamongan|1978-08-07
+Tamat|Dk. Turi RT 02/ RW 01, Turi, Tambakrejo, Bojonegoro|SLTA|Turi|Penjaga/ Pengamat Pos|085231863596|2013-01-01|Penatagunaan SDA|P.H.3.57|Bojonegoro|1968-06-13
+Titiek Rahayu|Dk. Gondang, RT 02/RW 04, Gondanglor, Sugio, Lamongan|SMA|Waduk Gondang|Penjaga/ Pengamat Pos|085812454363|2019-01-01|Penatagunaan SDA|P.H.3.58|Lamongan|2000-11-16
+Supardi|Pengkol RT 01/RW 03, Nguter, Sukoharjo|SMK|Colo Weir|Penjaga/ Pengamat Pos|087804899557|2017-01-01|Penatagunaan SDA|P.T.1.1|Sukoharjo|1972-06-16
+Yatna Diharja|Jambal, RT 025/RW 012, Tumpukan, Karangdowo, Klaten|SR|Jarum|Penjaga/ Pengamat Pos|085728543480|2002-01-01|Penatagunaan SDA|P.T.1.2|Klaten|1947-06-05
+Kristinah|Dk. KampungSewu RT 02/RW 09, Sewu, Jebres, Kota Surakarta|SMP|Jurug|Penjaga/ Pengamat Pos|089502064556|2020-01-01|Penatagunaan SDA|P.T.1.3, P.H.1.7|Sleman|1981-03-12
+Saryono|Widodaren Lor RT 03/RW 04, Widodaren, Ngawi|SLTA|Kajangan|Penjaga/ Pengamat Pos|085214045912|2016-01-01|Penatagunaan SDA|P.T.1.4|Ngawi|1975-06-04
+Doni Joko Susilo|Cokronegaran RT 005 RW 002, Kepatihan Wetan Jebres, Surakarta||Kali Pepe - PTPN|Penjaga/ Pengamat Pos|08814188093|2020-01-01|Penatagunaan SDA|P.T.1.5|Surakarta|1978-11-15
+Agus Hariyanto|Jagalan RT 07/RW 02, Jagalan, Jebres, Kota Surakarta|SMP|Kali Pepe - Tirtonadi|Penjaga/ Pengamat Pos|089658751661|2019-01-01|Penatagunaan SDA|P.T.1.6|Surakarta|1981-08-06
+Triyono|Klemboran RT 01 RW 03, Baturan, Colomadu, Karanganyar|SD|Kali Pepe - Tugu Boto|Penjaga/ Pengamat Pos|085786434944|2020-01-01|Penatagunaan SDA|P.T.1.7|Karanganyar|1986-12-31
+Subeno|Prayunan, RT 03/RW 01, Kedungupit, Kedungupit, Sragen|SMP|Kedungupit|Penjaga/ Pengamat Pos|085728748027|2013-01-01|Penatagunaan SDA|P.T.1.8|Sragen|1975-03-10
+Kasimo|Ngadipiro, RT 01/ RW 04, Nguntoronadi, Wonogiri|SMA|Ngadipiro|Penjaga/ Pengamat Pos|085250382771|2012-01-01|Penatagunaan SDA|P.T.1.9, P.H.1.14|Wonogiri|1968-05-22
+Supriyanto|Ngrembang RT 01/ RW 05, Giriwoyo, Wonogiri|S 1|Ngrembang|Penjaga/ Pengamat Pos|085229956922|2002-01-01|Penatagunaan SDA|P.T.1.10|Wonogiri|1970-06-06
+Madiyono|Dk. Sono RT 03/ RW 01, Bugel, Polokarto, Sukoharjo|SMA|Peren|Penjaga/ Pengamat Pos|085100094946|1982-01-01|Penatagunaan SDA|P.T.1.11, P.H.1.16|Sukoharjo|1967-03-14
+Sugiyanto|Bulakan RT 01/RW 07, Bulakan, Sukoharjo, Sukoharjo|S 1|Serenan|Penjaga/ Pengamat Pos|085728243962|2011-01-01|Penatagunaan SDA|P.T.1.12|Sragen|1980-06-23
+Agus Wahyono|Petir, RT 02/RW 04, Wonogiri, Wonogiri|SMA|Wonogiri Dam|Penjaga/ Pengamat Pos|085293292059|2014-01-01|Penatagunaan SDA|P.T.1.13|Wonogiri|1975-08-17
+Mariyadi|Jl. Sumber Sakti RT 010/RW 003, Jiwan, Jiwan, Madiun|SLTA|Ahmad Yani|Penjaga/ Pengamat Pos|085736205036|2012-01-01|Penatagunaan SDA|P.T.2.14|Madiun|1985-02-20
+Galih Deradha Putra|Pager RT 05/RW 01, Arjowinangun, Pacitan|SLTA|Arjowinangun - Pacitan|Penjaga/ Pengamat Pos|081938849788|2016-01-01|Penatagunaan SDA|P.T.2.15|Pacitan|1994-12-22
+Djonianto|Dk. Keden, RT 06/RW 03, Watubonang, Badegan, Ponorogo|SLTA|Badegan|Penjaga/ Pengamat Pos|081259090702|1979-01-01|Penatagunaan SDA|P.T.2.16|Ponorogo|1959-08-09
+Edy Sugito|Dk. Bendo RT 01/RW 02, Ngindeng, Sawo, Ponorogo|SLTA|Bendo|Penjaga/ Pengamat Pos|085236441073|2016-01-01|Penatagunaan SDA|P.T.2.17|Ponorogo|1972-04-10
+Dwi Cahyo Utomo|Dk. Gendu RT 08/RW 03, Metesih, Jiwan, Madiun|SLTA|Jati Weir|Penjaga/ Pengamat Pos|082233373213|2017-01-01|Penatagunaan SDA|P.T.2.18|Magetan|1995-12-18
+Suwarno|Ketanggi Lor RT 01/RW 01, Kartoharjo, Ngawi, Ngawi|SLTP|Ketonggo|Penjaga/ Pengamat Pos|082331082054|2003-01-01|Penatagunaan SDA|P.T.2.19|Ngawi|1961-07-03
+Agus Supriyanto|Jetak RT 001 RW 001, Klitik, Geneng, Ngawi||Ketonggo Bridge|Penjaga/ Pengamat Pos||2018-01-01|Penatagunaan SDA|P.T.2.20|Ngawi|1991-03-15
+Sidik Setiawan|Jl. Campursari Gg. VII no. 6 Sogaten, Madiun|SD|Winongo Bridge|Penjaga/ Pengamat Pos|089669962357|2016-01-01|Penatagunaan SDA|P.T.2.21|Madiun|1976-02-28
+Jefri Susanto|Dk. Jayan, Ds. Bogoharjo, Ngadirojo, Pacitan|S 1|Lorog|Penjaga/ Pengamat Pos|087758484629|2014-01-01|Penatagunaan SDA|P.T.2.22|Pacitan|1988-11-20
+Budi Susanto|JL. Lawu 62 RT 01/RW 02, Nologaten, Ponorogo, Ponorogo|SMP|Sekayu|Penjaga/ Pengamat Pos|085748735116|2019-01-01|Penatagunaan SDA|P.T.2.23|Ponorogo|1993-06-02
+Sumartiningsih|Gerdu, RT 03/RW 07 Banaran, Babat, Lamongan|SMA|Babat|Penjaga/ Pengamat Pos|082232992053|2012-01-01|Penatagunaan SDA|P.T.3.24|Madiun|1965-03-20
+Bambang Sugianto|Keduyung RT 01/RW 01 Keduyung, Laren, Lamongan|SMA|Babat Barrage|Penjaga/ Pengamat Pos|085259092499|2015-01-01|Penatagunaan SDA|P.T.3.25|Lamongan|1969-12-17
+Samsiaji|Dk. Bulurejo, RT 01/RW 01, Bulurejo, Benjeng, Gresik|SMP|Bengkelo Lor|Penjaga/ Pengamat Pos|085707809819|2011-01-01|Penatagunaan SDA|P.T.3.26|Gresik|1987-07-19
+Mardiyana Zulifah|Jl. Jaksa Agung Suprapto 8.I/17, RT 03/RW 04, Sidokumpul, Gresik, Gresik|S 1|Boboh Kali Lamong|Penjaga/ Pengamat Pos|081330426155|2020-01-01|Penatagunaan SDA|P.T.3.27|Malang|1978-06-23
+Wuryanto|Plesungan RT 08/RW 01, Kapas, Bojonegoro|SMU|Bojonegoro - Kali Kethek|Penjaga/ Pengamat Pos|082332136873|2017-01-01|Penatagunaan SDA|P.T.3.28, P.H.3.45|Bojonegoro|1980-12-01
+Dasup|Padang RT 12/ RW 02 Padang, Trucuk, Bojonegoro|SMA|Bojonegoro Barrage|Penjaga/ Pengamat Pos|082140384664|2013-01-01|Penatagunaan SDA|P.T.3.29|Bojonegoro|1971-08-04
+Nurhidayati|Jl. Topeng RT 01/RW 03, Ds. Brangkal, Parengan, Tuban|SMP|Brangkal|Penjaga/ Pengamat Pos|085236841070|2019-01-01|Penatagunaan SDA|P.T.3.30|Tuban|1979-05-03
+Slamet Sukamto|Dengok RT 07/ RW 02, Dengok, Padangan, Bojonegoro|SMP|Cepu|Penjaga/ Pengamat Pos|081393469217|1995-01-01|Penatagunaan SDA|P.T.3.31, P.H.3.46|Bojonegoro|1967-10-01
+Sumantri|Karangjiwo RT 13/RW 04, Gelap, Laren, Lamongan|SMK|Floodway Bridge|Penjaga/ Pengamat Pos|085730712965|2013-01-01|Penatagunaan SDA|P.T.3.32|Lamongan|1971-10-04
+Moh. Dawam Muzani|Karanggeneng  RT 03/ RW 01, Karanggeneng, Lamongan|SMK|Karanggeneng|Penjaga/ Pengamat Pos|085755599481|2019-01-01|Penatagunaan SDA|P.T.3.33|Lamongan|2001-04-14
+Sri Astutik|Dk. Melideg RT 20/ RW 06, Luwihaji, Ngraho, Bojonegoro|SMA|Karangnongko|Penjaga/ Pengamat Pos|085230326784|2008-01-01|Penatagunaan SDA|P.T.3.34|Bojonegoro|1979-04-16
+Ekwan|Dk. Tegaron RT 08/ RW 02, Mlaten, Kalitidu, Bojonegoro|SD|Malo Bridge|Penjaga/ Pengamat Pos|085257687546|2015-01-01|Penatagunaan SDA|P.T.3.35|Bojonegoro|1975-09-15
+Supriyanto|Napel, RT 02/RW02, Kerek, Ngawi, Ngawi|S 1|Napel|Penjaga/ Pengamat Pos|081335930590|2018-01-01|Penatagunaan SDA|P.T.3.36|Ngawi|1976-12-28
+Kastari|Dk. Lampah, Bulurejo, Rengel, Tuban|SLTP|Sumberrejo|Penjaga/ Pengamat Pos|085331711357|2015-01-01|Penatagunaan SDA|P.T.3.37|Tuban|1971-04-14
+Waluyo|Dusun Karangtengah RT 1/RW 10, Gambiranom, Baturetno, Wonogiri|SLTP|Baturetno|Penjaga/ Pengamat Pos|085602060583|1985-01-01|Penatagunaan SDA|P.K.1.1|Wonogiri|1948-05-01
+Warsiyah|Pengkol RT 01/RW 03, Nguter, Sukoharjo|SD|Bendung Colo|Penjaga/ Pengamat Pos|085229772672|2018-01-01|Penatagunaan SDA|P.K.1.2|Sukoharjo|1977-06-17
+Heru Susanto|Karang Talun RT 02/RW 03, Pokoh Kidul, Wonogiri, Wonogiri|SMA|Wonogiri|Penjaga/ Pengamat Pos|081382218894|2018-01-01|Penatagunaan SDA|P.K.1.3|Wonogiri|1983-06-29
+Dody Susanto|Gumpang RT 01/RW 03 Kartasura, Sukoharjo|SMU|Pabelan|Penjaga/ Pengamat Pos|08164897657|2019-01-01|Penatagunaan SDA|P.K.1.4|Sukoharjo|1982-11-27
+Slamet Triono|Jl. Diponegoro, Kincang Wetan, Jiwan, Madiun|SLTA|Madiun - Jiwan|Penjaga/ Pengamat Pos|081217775441|2008-01-01|Penatagunaan SDA|P.K.2.5|Jakarta Timur|1968-06-10
+Joko Prasetyo|Jl. Letda Nur Hasyim RT 01/RW 01, Kalianyar, Kapas, Bojonegoro|SMU|Bojonegoro|Penjaga/ Pengamat Pos|085853810053|2001-01-01|Penatagunaan SDA|P.K.3.6|Bojonegoro|1980-06-14
